@@ -1,1 +1,11 @@
-<p>product-card works!</p>
+<h2>{{myProduct.title | uppercase}}</h2>
+<img src={{myProduct.imageUrl}} width=100/>
+<p>{{myProduct.description}}</p>
+<p *ngIf="myProduct.size && myProduct.size.length > 1">Plusieurs tailles disponibles</p>
+<button *ngFor="let size of myProduct.size">{{size}}</button>
+<b>{{(myProduct.price / 100) | number |  currency:'EUR':true: '1.1'}} </b>
+<p>
+    <b>{{myProduct.likes}}</b>
+    <button (click)="onAddLike()">{{myProduct.likelabel}}</button>
+</p>
+<p>{{myProduct.createDate | date:'fullDate'}}</p>
