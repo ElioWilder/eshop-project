@@ -8,8 +8,12 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SortByDatePipe } from './pipes/product.pipe';
+import { FilterNamePipe } from './pipes/filterName.pipe';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule} from '@angular/material/button';
 registerLocaleData(localeFr);
 
 @NgModule({
@@ -19,6 +23,7 @@ registerLocaleData(localeFr);
     HeaderComponent,
     FooterComponent,
     SortByDatePipe,
+    FilterNamePipe,
     SearchComponent
   ],
   exports: [
@@ -27,7 +32,10 @@ registerLocaleData(localeFr);
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [{
     provide: LOCALE_ID,

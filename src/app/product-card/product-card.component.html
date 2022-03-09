@@ -1,11 +1,25 @@
-<h2>{{myProduct.title | uppercase}}</h2>
-<img src={{myProduct.imageUrl}} width=100/>
-<p>{{myProduct.description}}</p>
-<p *ngIf="myProduct.size && myProduct.size.length > 1">Plusieurs tailles disponibles</p>
-<button *ngFor="let size of myProduct.size">{{size}}</button>
-<b>{{(myProduct.price / 100) | number |  currency:'EUR':true: '1.1'}} </b>
-<p>
-    <b>{{myProduct.likes}}</b>
-    <button (click)="onAddLike()">{{myProduct.likelabel}}</button>
-</p>
-<p>{{myProduct.createDate | date:'fullDate'}}</p>
+<style>
+    .element {
+        display: block;
+        text-align: center;
+        width: 23em;
+        max-height: 27em;
+        margin: 0.5em;
+    }
+</style>
+
+<mat-card class="element">
+    <mat-card-title>{{myProduct.title | uppercase}}</mat-card-title>
+    <img mat-card-img src={{myProduct.imageUrl}} width=100/>
+    <mat-card-content>{{myProduct.description}}</mat-card-content>
+    <mat-card-subtitle *ngIf="myProduct.size && myProduct.size.length > 1">Plusieurs tailles disponibles</mat-card-subtitle>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" *ngFor="let size of myProduct.size">{{size}}</button>
+    </mat-card-actions>
+    <mat-card-content><b>{{(myProduct.price / 100) | number |  currency:'EUR':true: '1.1'}} </b></mat-card-content>
+    <mat-card-actions>
+        <b>{{myProduct.likes}}</b>
+        <button mat-raised-button color="accent" (click)="onAddLike()">{{myProduct.likelabel}}</button>
+    </mat-card-actions>
+    <mat-card-content>{{myProduct.createDate | date:'fullDate'}}</mat-card-content>
+</mat-card>
