@@ -4,7 +4,6 @@ import { Product } from '../models/product.model';
 @Pipe({ name: 'filterName'})
 export class FilterNamePipe implements PipeTransform {
     transform(products: Product[], term:string) {
-        console.log(term)
         if(term) {
             return products.filter((product) =>product.title.toLowerCase().includes(term.toLowerCase()))
         } else return products;

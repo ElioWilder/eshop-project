@@ -37,12 +37,11 @@
 </div>
 <div class="search">
   <div>
-    Chercher : <input type="text" id="search" name="search" placeholder="Trouver votre figurine" [(ngModel)]="search"/>
+    Rechercher : <input type="text" id="search" name="search" placeholder="la figurine de vos rêves" [(ngModel)]="search"/>
   </div>
-  <div>La recherche : {{search}}</div>
 </div>
 <div class="card">
-  <app-product-card *ngFor="let product of (products | sortByDate:'asc' | filterName:search)" [myProduct] ="product" ></app-product-card>
+  <app-product-card *ngFor="let product of (products | sortByDate:'asc' | filterName:search | sortByName:'name')" [myProduct] ="product" ></app-product-card>
 </div>
 <div class="footer">
 <app-footer></app-footer>

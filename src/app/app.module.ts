@@ -8,6 +8,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SortByDatePipe } from './pipes/product.pipe';
+import { SortByNamePipe } from './pipes/productName.pipe';
 import { FilterNamePipe } from './pipes/filterName.pipe';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
@@ -23,6 +24,7 @@ registerLocaleData(localeFr);
     HeaderComponent,
     FooterComponent,
     SortByDatePipe,
+    SortByNamePipe,
     FilterNamePipe,
     SearchComponent
   ],
