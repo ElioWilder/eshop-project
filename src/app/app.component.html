@@ -1,48 +1,8 @@
-<style>
-  .card {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-
-  .search {
-    padding: 20px;
-  }
-
-  body {
-    background-color: rgb(250, 181, 116);
-    height: 74em;
-  }
-
-  .header {
-    background-color: #5c7af3;
-    color: white;
-    padding: 10px;
-    height: 3em;
-  }  
-
-  .footer {
-    background-color: #5c7af3;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    height: auto;
-  }
-</style>
-
 <body>
 <div class="header">
 <app-header></app-header>
 </div>
-<div class="search">
-  <div>
-    Rechercher : <input type="text" id="search" name="search" placeholder="la figurine de vos rêves" [(ngModel)]="search"/>
-  </div>
-</div>
-<div class="card">
-  <app-product-card *ngFor="let product of (products | sortByDate:'asc' | filterName:search | sortByName:'name')" [myProduct] ="product" ></app-product-card>
-</div>
+<app-products-list></app-products-list>
 <div class="footer">
 <app-footer></app-footer>
 </div>

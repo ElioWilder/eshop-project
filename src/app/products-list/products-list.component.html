@@ -1,0 +1,12 @@
+<style>
+    
+</style>
+
+<div class="search">
+    <div>
+      Rechercher : <input type="text" id="search" name="search" placeholder="la figurine de vos rêves" [(ngModel)]="search"/>
+    </div>
+  </div>
+  <div class="card">
+    <app-product-card *ngFor="let product of (products | sortByDate:'asc' | filterName:search | sortByName:'name')" [myProduct] ="product" ></app-product-card>
+  </div>

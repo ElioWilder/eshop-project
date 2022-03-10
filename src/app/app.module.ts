@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule} from '@angular/material/button';
+import { ProductsListComponent } from './products-list/products-list.component';
 registerLocaleData(localeFr);
 
 @NgModule({
@@ -26,7 +27,8 @@ registerLocaleData(localeFr);
     SortByDatePipe,
     SortByNamePipe,
     FilterNamePipe,
-    SearchComponent
+    SearchComponent,
+    ProductsListComponent
   ],
   exports: [
     SortByDatePipe
