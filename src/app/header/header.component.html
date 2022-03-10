@@ -1,1 +1,5 @@
-<h1>Final Fantasy Shop</h1>
+<button mat-button [matMenuTriggerFor]="menu">Final Fantasy Shop</button>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="">Accueil</button>
+    <button mat-menu-item routerLink="about">A propos</button>
+</mat-menu>

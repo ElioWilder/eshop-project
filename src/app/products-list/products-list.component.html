@@ -8,5 +8,5 @@
     </div>
   </div>
   <div class="card">
-    <app-product-card *ngFor="let product of (products | sortByDate:'asc' | filterName:search | sortByName:'name')" [myProduct] ="product" ></app-product-card>
+      <app-product-card *ngFor="let product of (products | sortByDate:'asc' | filterName:search)" [routerLink]="['product', product.id]" [myProduct] ="product" ></app-product-card>
   </div>

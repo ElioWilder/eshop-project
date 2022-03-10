@@ -15,7 +15,10 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule} from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
 import { ProductsListComponent } from './products-list/products-list.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { AboutComponent } from './about/about.component';
 registerLocaleData(localeFr);
 
 @NgModule({
@@ -28,7 +31,9 @@ registerLocaleData(localeFr);
     SortByNamePipe,
     FilterNamePipe,
     SearchComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    ProductDetailComponent,
+    AboutComponent
   ],
   exports: [
     SortByDatePipe
@@ -39,7 +44,8 @@ registerLocaleData(localeFr);
     FormsModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatMenuModule
   ],
   providers: [{
     provide: LOCALE_ID,
