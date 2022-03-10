@@ -1,5 +1,5 @@
 <button mat-button [matMenuTriggerFor]="menu">Final Fantasy Shop</button>
 <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="">Accueil</button>
-    <button mat-menu-item routerLink="about">A propos</button>
+    <button mat-menu-item routerLink="" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">Accueil</button>
+    <button mat-menu-item routerLink="about" routerLinkActive="is-active">A propos</button>
 </mat-menu>
