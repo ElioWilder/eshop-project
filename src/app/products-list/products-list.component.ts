@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product.model';
 import { ProductsService } from '../services/products.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-products-list',
@@ -9,14 +10,14 @@ import { ProductsService } from '../services/products.service';
 })
 export class ProductsListComponent implements OnInit {
 
-  products!: Product[];
+  productsObservable!: Observable<any>;
     search: string = '';
     
     constructor(private productsService: ProductsService){}
   
     ngOnInit() { 
       this.search = "";
-      this.products = this.productsService.getAllProducts();
+      this.productsObservable = this.productsService.getAllProducts();
     }
 
 }

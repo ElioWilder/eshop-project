@@ -6,7 +6,7 @@ export class Product {
         public imageUrl: string,
         public price: number,
         public likes: number,
-        public likelabel: string,
+        public likeLabel: string,
         public createDate: Date,
         public size?: string[],
         

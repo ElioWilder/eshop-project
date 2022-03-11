@@ -3,7 +3,7 @@
         display: block;
         text-align: center;
         width: 23em;
-        max-height: 27em;
+        max-height: 30em;
         margin: 0.5em;
     }
 </style>
@@ -19,7 +19,10 @@
     <mat-card-content><b>{{(myProduct.price / 100) | number |  currency:'EUR':true: '1.1'}} </b></mat-card-content>
     <mat-card-actions>
         <b>{{myProduct.likes}}</b>
-        <button mat-raised-button color="accent" (click)="onAddLike()">{{myProduct.likelabel}}</button>
+        <button mat-raised-button color="accent" (click)="onAddLike()">{{myProduct.likeLabel}}</button>
     </mat-card-actions>
     <mat-card-content>{{myProduct.createDate | date:'fullDate'}}</mat-card-content>
+    <a mat-raised-button class="details" *ngIf= "displayLink" [routerLink] = "['product', myProduct.id]">
+        Plus de détails..
+    </a>
 </mat-card>

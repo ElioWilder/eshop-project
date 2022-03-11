@@ -19,6 +19,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AboutComponent } from './about/about.component';
+import { HttpClientModule } from "@angular/common/http";
 registerLocaleData(localeFr);
 
 @NgModule({
@@ -45,7 +46,8 @@ registerLocaleData(localeFr);
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule
   ],
   providers: [{
     provide: LOCALE_ID,
